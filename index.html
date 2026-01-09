@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title id="page-title">Ancient Protector</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+   <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
+        <h1 id="main-heading">Fermented Honey</h1>
+        <div id="sub-heading" style="letter-spacing: 3px; font-size: 0.8rem; color: var(--brown-earth);">HONEY • GARLIC • GINGER</div>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-link active" onclick="openTab(event, 'jar-section')">The Jar</button>
+        <button class="tab-link" onclick="openTab(event, 'science')">The Science</button>
+        <button class="tab-link" onclick="openTab(event, 'hadith')">Shifa & Sunnah</button>
+        <button class="tab-link" onclick="openTab(event, 'help')">Troubleshoot</button>
+    </nav>
+
+   <div id="jar-section" class="tab-content active">
+
+	
+	<div class="card batch-card" id="main-batch-card" style="border: 1px solid #e0e0e0; background: #fffcf5; border-radius: 12px; padding: 20px;">
+    <div id="batch-display">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div>
+                <div id="phase-status" class="phase-badge" style="background: #eee; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase;">Detecting...</div>
+                <h3 style="margin: 5px 0 0 0; color: #5d4037;">🏺 Jar Identity</h3>
+            </div>
+            <span id="batch-tag" style="background: #5d4037; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">LOADING</span>
+        </div>
+
+        <div id="batch-info" style="margin-top: 15px;">
+            <p><small>Syncing batch data...</small></p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px dashed #d7ccc8; margin: 15px 0;">
+
+        <div id="fermentation-status">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <p style="margin: 0;"><small><strong>Fermentation Progress:</strong></small></p>
+                <span id="percent-text" style="font-size: 0.75rem; font-weight: bold; color: #B22222;">0%</span>
+            </div>
+            
+            <div class="progress-container">
+                <div id="progress-bar" style="width: 0%; background: linear-gradient(90deg, #DAA520, #B22222, #5d4037); transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);"></div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 0.6rem; margin-top: 8px; color: #8d6e63; font-weight: bold; letter-spacing: 0.5px;">
+                <span>INFUSING</span>
+                <span>PEAK PROBIOTIC</span>
+                <span>MATURED</span>
+            </div>
+        </div>
+
+        <div id="age-counter" style="text-align: center; margin-top: 25px;">
+            </div>
+
+        <div id="phase-explanation" style="margin-top: 15px; padding: 12px; background: #fff; border-radius: 8px; font-size: 0.75rem; color: #5d4037; border-left: 4px solid #DAA520; line-height: 1.4;">
+            <i>Initializing...</i>
+        </div>
+    </div>
+	
+</div>
+<!-- 
+ <div class="card">
+        <h3 style="margin-top:0;">⭐ Batch Feedback</h3>
+        <form action="https://formspree.io/f/your-id" method="POST">
+            <input type="hidden" name="batch_id" id="form-batch-id">
+            <select name="rating" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;">
+                <option value="5">⭐⭐⭐⭐⭐ - Perfection</option>
+                <option value="4">⭐⭐⭐⭐ - Developing Well</option>
+                <option value="3">⭐⭐⭐ - Good</option>
+            </select>
+            <textarea name="feedback" placeholder="How is the flavor?" style="width: 100%; height: 60px; padding: 10px; border-radius: 5px; border: 1px solid #ddd;"></textarea>
+            <button type="submit" style="width: 100%; background: var(--danger); color: white; border: none; padding: 12px; border-radius: 5px; font-weight: bold; cursor: pointer;">Submit Review</button>
+        </form>
+    </div>
+	-->
+
+       
+        <div class="no-refrig">DO NOT REFRIGERATE - STORE IN A DARK CABINET</div>
+    </div>
+
+    <div id="science" class="tab-content">
+        <h2 class="section-title">The Micro-World Science</h2>
+        <p style="font-size: 0.95rem;">Inside this jar, a tiny biological "factory" is running. Here is how the molecules work together:</p>
+
+        <div class="grid">
+            <div class="card">
+                <strong>1. The "Chemical Key" (Allicin)</strong>
+                <p><small>In raw garlic, Allicin doesn't exist yet! It only appears when garlic is <strong>hurt</strong> (crushed). Two tiny parts called <em>Alliin</em> and <em>Alliinase</em> merge to create Allicin—the garlic's natural defense shield. The honey acts like a vacuum seal, trapping this shield so we can eat it before it disappears.</small></p>
+            </div>
+            <div class="card">
+                <strong>2. The "Great Squeeze" (Osmosis)</strong>
+                <p><small>Honey is very "thirsty" because it has almost no water. It plays a game of tug-of-war with the garlic and ginger, pulling the medicinal juices out of them and into the syrup. This is why the honey gets thinner and the garlic eventually sinks!</small></p>
+            </div>
+            <div class="card">
+                <strong>3. The "Probiotic Party"</strong>
+                <p><small>Once the honey is slightly watered down by the juices, good bacteria (Lactobacillus) wake up. They "pre-digest" the ingredients, breaking down tough plant walls so your body can absorb the vitamins much faster.</small></p>
+            </div>
+            <div class="card">
+                <strong>4. Gingerols & Heat</strong>
+                <p><small>Ginger contains <em>Gingerols</em>. These molecules interact with your "TRPV1" receptors—the same ones that feel heat. This trick sends a signal to your brain to speed up blood flow and "warm up" your internal defenses.</small></p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Scientific Benefits (For Your Cells)</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="benefit-tag">Immunomodulation</span>
+                <strong>Training Your "Tiny Soldiers"</strong>
+                <p><small>The compounds tell your White Blood Cells (your body's soldiers) to be more alert. It doesn't just make them work harder; it makes them work <em>smarter</em> against bad bugs.</small></p>
+            </div>
+            <div class="card">
+                <span class="benefit-tag">Anti-Inflammatory</span>
+                <strong>Putting Out the Fire</strong>
+                <p><small>When you're sick, your body feels "hot" or swollen inside (inflammation). This tonic act like a tiny fire extinguisher, cooling down the cells so they can heal faster.</small></p>
+            </div>
+            <div class="card">
+                <span class="benefit-tag">Antioxidant</span>
+                <strong>The Cellular Clean-up Crew</strong>
+                <p><small>Our bodies create "trash" called Free Radicals. The honey and ginger act like a clean-up crew, catching this trash before it can damage your DNA or make you feel tired.</small></p>
+            </div>
+            <div class="card">
+                <span class="benefit-tag">Bioavailability</span>
+                <strong>The Golden Key</strong>
+                <p><small>Raw honey is a <em>Yogavahi</em> (carrier). It opens the "doors" of your cells, allowing the medicine from the garlic and ginger to enter your bloodstream instead of just passing through your tummy.</small></p>
+            </div>
+        </div>
+		    <div class="grid" id="science-grid">
+        </div>
+    </div>
+
+    <div id="hadith" class="tab-content">
+ <h2 class="section-title">The Healing Promise</h2>
+        
+        <div class="verse-container">
+            <div class="arabic-text">ثُمَّ كُلِى مِن كُلِّ ٱلثَّمَرَٰتِ فَٱسْلُكِى سُبُلَ رَبِّكِ ذُلُلًۭا ۚ يَخْرُجُ مِنۢ بُطُونِهَا شَرَابٌۭ مُّخْتَلِفٌ أَلْوَٰنُهُۥ فِيهِ شِفَآءٌۭ لِّلنَّاسِ ۗ إِنَّ فِى ذَٰلِكَ لَـَٔايَةًۭ لِّقَوْمٍۢ يَتَفَكَّرُونَ</div>
+            <div class="english-verse">"Then eat from all the fruits and follow the ways of your Lord laid down [for you]. There emerges from their bellies a drink, varying in colors, in which there is healing for people. Indeed in that is a sign for a people who give thought." <br><strong>— Surah An-Nahl (16:69)</strong></div>
+        </div>
+
+        <div class="verse-container">
+            <div class="arabic-text">وَيُسْقَوْنَ فِيهَا كَأْسًۭا كَانَ مِزَاجُهَا زَنجَبِيلًا</div>
+            <div class="english-verse">"And they will be given to drink a cup [of wine] whose mixture is of ginger." <br><strong>— Surah Al-Insan (76:17)</strong></div>
+        </div>
+
+        <div class="card" style="margin-top:20px;">
+            <div class="arabic-text">"عَلَيْكُمْ بِالشِّفَاءَيْنِ: الْعَسَلِ وَالْقُرْآنِ"</div>
+            <p style="text-align: center;"><em>"Take use of the two cures: Honey and the Quran."</em><br><small>— Sunan Ibn Majah</small></p>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <h2 class="section-title">The Ingredients in Sunnah</h2>
+            <p><strong>Honey:</strong> Described in Surah An-Nahl as a "Healing for Men." The Prophet (ﷺ) used it to maintain health and treat digestive issues.</p>
+            <p><strong>Garlic:</strong> A potent medicinal plant recognized in Prophetic tradition for its ability to treat seventy ailments, though its scent is to be managed during communal prayers.</p>
+            <p><strong>Ginger:</strong> Mentioned as <em>Zanjabil</em>, the flavor of the drinks in Paradise (76:17), representing ultimate refreshment and purity.</p>
+        </div>
+    </div>
+
+    <div id="help" class="tab-content">
+
+        <!--  <h2 class="section-title">Biological Detective</h2>
+		<div class="grid">
+		
+            <div class="card">
+                <svg class="case-icon" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M12 12l2 2"/></svg>
+                <strong>Case: The Magic Colors</strong>
+                <p><small>Garlic has sulfur (like a matchstick). When mixed with honey’s acid, it turns neon green or blue. It’s a safe chemistry experiment!</small></p>
+            </div>
+            <div class="card">
+                <svg class="case-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9l.01 0"/><path d="M15 15l.01 0"/><path d="M12 12l.01 0"/></svg>
+                <strong>Case: The Breathing Jar</strong>
+                <p><small>Hissing or bubbles? That’s the "Ancient Protector" breathing. Good bacteria are making bubbles (CO2) because they are happy!</small></p>
+            </div>
+            <div class="card">
+                <svg class="case-icon" viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.8 4-4s-4-7-4-7-4 4.8-4 7 1.8 4 4 4z"/><path d="M17 16.3c2.2 0 4-1.8 4-4s-4-7-4-7-4 4.8-4 7 1.8 4 4 4z"/></svg>
+                <strong>Case: The Running Honey</strong>
+                <p><small>Honey gets watery because it drank the juice from the garlic and ginger. This is perfect; now the medicine is inside the syrup!</small></p>
+            </div>
+            <div class="card">
+                <svg class="case-icon" viewBox="0 0 24 24"><path d="M6 3v18h12V3H6z"/><path d="M9 18h6"/><path d="M9 15h6"/></svg>
+                <strong>Case: The Sinking Cloves</strong>
+                <p><small>Garlic floats at first because it's light. Once it gets full of honey, it sinks to the bottom. This means the transformation is almost done!</small></p>
+            </div>
+        </div>-->
+        <h2 class="section-title">Common Questions</h2>
+        <div class="card" style="margin-bottom:15px;">
+            <strong>Is it supposed to bubble?</strong>
+            <p><small>Yes! Bubbles mean the good bacteria are breathing. It shows your Ancient Protector is alive and working.</small></p>
+        </div>
+        <div class="card" style="margin-bottom:15px;">
+            <strong>Why is the garlic green?</strong>
+            <p><small>Garlic has natural sulfur. When it meets the acidity of the ferment, it can turn neon green or blue. It's safe, healthy, and perfectly normal science!</small></p>
+        </div>
+        <div class="card">
+            <strong>When is it strongest?</strong>
+            <p><small>The science "peaks" at about 4-6 weeks, but the older it gets, the more mellow and powerful the enzymes become.</small></p>
+        </div>
+    </div>
+
+    <div class="footer-banner">
+        "Oh Allah, Lord of mankind, remove the illness, cure (him/her), for You are the One Who cures."
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
