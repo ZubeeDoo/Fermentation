@@ -2,7 +2,7 @@ const batchDatabase = {
     "AP2026-01": {
         title: "The Ancient Protector",
 		subTitle: "HONEY • GARLIC • GINGER",
-        born: "2025-01-01",
+        born: "2025-12-28",
         honey: "Wildflower Raw Honey",
         notes: "Standard garlic-ginger ratio.",
         science: [
@@ -21,24 +21,63 @@ const batchDatabase = {
             { tag: "Metabolism", title: "Sugar Manager", text: "Cinnamon helps cells manage glucose efficiently." }
         ]
     },
-	 "TP2025-28": {
-        title: "GOLDEN IMMUNITY ELIXIR",
-		subTitle: "Natural Remedy",
-        born: "2025-12-28",
-        honey: "Clover Honey",
-        notes: "Added fresh lemon zest and Ceylon cinnamon.",
-        science: [
-            { tag: "Vitamin C", title: "The Shield", text: "Citric acid stabilizes the honey and boosts cell defense." },
-            { tag: "Metabolism", title: "Sugar Manager", text: "Cinnamon helps cells manage glucose efficiently." }
-        ]
-    }
+	 "GI2025-01": {
+	    title: "Golden Immunity Elixir",
+	    born: "2026-01-19",
+	    honey: "Wildflower Raw Honey",
+	    notes: "A potent sun-colored blend. The heat of Clove and Ginger is used here to 'unfold' the turmeric, while Black Pepper ensures every drop is absorbed.",
+	    science: [
+		        { 
+		            tag: "Bio-Activation", 
+		            title: "The Piperine Bodyguard", 
+		            text: "Turmeric's Curcumin is hard to absorb alone. Black Pepper (Piperine) acts as a bodyguard, increasing Turmeric absorption by up to 2,000%." 
+		        },
+		        { 
+		            tag: "Circulatory Heat", 
+		            title: "The Clove Catalyst", 
+		            text: "Clove and Ginger stimulate blood flow, acting as a delivery system to carry the golden antioxidants to your furthest extremities." 
+		        },
+		        { 
+		            tag: "DNA Shielding", 
+		            title: "Polyphenol Armor", 
+		            text: "This blend is rich in polyphenols that shield your cells from oxidative stress, acting like a protective coat of armor for your genetic code." 
+		        }
+		    ]
+		},
+	"RR2026-01": {
+		    title: "Rooted Resilience (Vetiver & 5-Herb Essence)",
+		    born: "2026-01-19",
+		    honey: "Forest Amber Honey",
+		    notes: "A cooling infusion of Vetiver roots fortified with the 'N5 Complex' (3 Nirmal + 2 Rasila botanicals). Designed for deep stillness.",
+		    science: [
+		        { 
+		            tag: "Nervine Tonic", 
+		            title: "The Neural Soother", 
+		            text: "Vetiver compounds interact with the nervous system to lower cortisol and ground your energy." 
+		        },
+		        { 
+		            tag: "Thermoregulation", 
+		            title: "The Internal Cooler", 
+		            text: "Acting as a natural refrigerant, this blend helps lower 'Pitta' or internal heat at a cellular level." 
+		        },
+		        { 
+		            tag: "Phyto-Synergy", 
+		            title: "The N5 Catalyst", 
+		            text: "A precise ratio of 3 clarifying (Nirmal) and 2 hydrating (Rasila) herbs creates a bio-available bridge, driving nutrients into deep tissues." 
+		        }
+		    ]
+		}
 };
 function init() {
     const urlParams = new URLSearchParams(window.location.search);
     const batchId = urlParams.get('batch');
-    
-    // Default to AP2026-01 if ID is missing or wrong
-    const data = batchDatabase[batchId] || batchDatabase["AP2026-01"];
+    const data = batchDatabase[batchId];
+
+	// Check if the batch exists in our JSON
+    if (!batchId || !data) {
+        showErrorState();
+        return; // Stop the script here
+    }
 
     // 1. Update Headings & IDs
     document.title = data.title;
@@ -126,5 +165,37 @@ function init() {
         document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " active";
     }
+
+function showErrorState() {
+    // 1. Update Headings
+    document.getElementById('main-heading').innerText = "Unknown Batch";
+    document.getElementById('page-title').innerText = "Batch Not Found";
+
+    // 2. Clear the Batch Card and show Error Message
+    const batchCard = document.getElementById('main-batch-card');
+    batchCard.style.border = "1px solid #ffccd5";
+    batchCard.style.background = "#fff5f5";
+    
+    batchCard.innerHTML = `
+        <div style="text-align: center; padding: 20px;">
+            <div style="font-size: 3rem; margin-bottom: 10px;">🔍</div>
+            <h3 style="color: #d9534f; margin: 0;">Batch Not Found</h3>
+            <p><small>This QR code might be outdated or the batch ID is incorrect.</small></p>
+            <hr style="border: 0.5px dashed #ffccd5; margin: 15px 0;">
+            <p style="font-size: 0.8rem; color: #666;">If you believe this is an error, please check the ID on your jar label or contact the Vinter.</p>
+            <button onclick="window.location.href='index.html'" style="background: #5d4037; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                Back to Home
+            </button>
+        </div>
+    `;
+
+    // 3. Hide the Science Grid so the page doesn't look broken
+    document.getElementById('science-grid').innerHTML = `
+        <p style="text-align: center; grid-column: 1/-1; color: #999;">
+            Science data is unavailable for this ID.
+        </p>
+    `;
+}
+
 
 window.onload = init;
